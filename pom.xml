@@ -3,6 +3,10 @@
   <groupId>ATest</groupId>
   <artifactId>Selenium</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+	 <properties>
+	  <maven.compiler.target>11</maven.compiler.target>
+	  <maven.compiler.sources>11</maven.compiler.sources>
+  </properties>
   <dependencies>
   	<dependency>
   		<groupId>org.seleniumhq.selenium</groupId>
@@ -15,4 +19,5 @@
 		<version>4.3.1</version>
     </dependency>
   </dependencies>
+
 </project>

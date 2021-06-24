@@ -8,7 +8,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Main {
@@ -32,7 +35,11 @@ public class Main {
 	}
 
 	private static String status(String url) {
-		WebDriver driver = new ChromeDriver();
+		WebDriverManager.chromedriver().setup();
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--no-sandbox");
+		options.addArguments("--disable-dev-shm-usage");
+		WebDriver driver = new ChromeDriver(options);
 		try {
 			driver.get(url);
 			String status = driver.findElement(By.className("State")).getText();
