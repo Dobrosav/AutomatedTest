@@ -4,12 +4,12 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.sql.Driver;
 import java.util.ArrayList;
 import java.util.Scanner;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.chrome.ChromeDriver;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Main {
 	private static int count = 0;
@@ -32,7 +32,7 @@ public class Main {
 	}
 
 	private static String status(String url) {
-		ChromeDriver driver = new ChromeDriver();
+		WebDriver driver = new ChromeDriver();
 		try {
 			driver.get(url);
 			String status = driver.findElement(By.className("State")).getText();
