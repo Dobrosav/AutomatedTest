@@ -1,7 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: internship.test.RunTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.003 s <<< FAILURE! - in internship.test.RunTest
-internship.test.RunTest  Time elapsed: 0.002 s  <<< ERROR!
-org.junit.platform.commons.JUnitException: @BeforeAll method 'public void internship.test.RunTest.before()' must be static unless the test class is annotated with @TestInstance(Lifecycle.PER_CLASS).
-
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec

@@ -1,5 +1,4 @@
 package internship.test;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import internship.Main;

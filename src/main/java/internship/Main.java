@@ -36,10 +36,9 @@ public class Main {
 
 	private static String status(String url) {
 		WebDriverManager.chromedriver().setup();
-		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--no-sandbox");
-		options.addArguments("--disable-dev-shm-usage");
-		WebDriver driver = new ChromeDriver(options);
+		ChromeOptions ChromeOptions = new ChromeOptions();
+		ChromeOptions.addArguments("--headless", "window-size=1024,768", "--no-sandbox");
+		WebDriver driver = new ChromeDriver(ChromeOptions);
 		try {
 			driver.get(url);
 			String status = driver.findElement(By.className("State")).getText();
