@@ -88,6 +88,7 @@ public class Main {
 				fw.write(status[i] + "\n");
 				i++;
 			}
+			fw.flush();
 			fw.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
