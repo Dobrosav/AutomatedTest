@@ -60,14 +60,14 @@ public class Main {
 
 	}
 
-	public static void main(String[] args) {
+	public int getStatuses() {
 		try {
 			// driver=new ChromeDriver();
 			readData();
 			FileWriter fw;
 			String[] status = new String[count];
 			status[0] = columnValues.get(0);
-			for (int i = 1; i < 5; i++) {
+			for (int i = 1; i < count; i++) {
 				String[] tmp = columnValues.get(i).split(",", -1);
 				if (columnValues.get(i).contains("Opened")) {
 					String url = tmp[6];
@@ -82,7 +82,7 @@ public class Main {
 				if (i % 200 == 0)
 					Thread.sleep(20000);
 			}
-			fw = new FileWriter("FixedTests_UnfixedODandIDtestsOutput.csv", true);
+			fw = new FileWriter("pr-data_Output.csv", true);
 			int i = 0;
 			while (i < count) {
 				// System.out.println(status[i]);
@@ -97,7 +97,10 @@ public class Main {
 		catch(InterruptedException e) {
 			e.printStackTrace();
 		}
-
+		return 0;
 	}
-
+	public static void main(String args[]) {
+		Main m=new Main();
+		m.getStatuses();
+	}
 }
