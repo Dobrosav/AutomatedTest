@@ -23,7 +23,6 @@ jobs:
         distribution: 'adopt'
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-    - name: commit
     - uses: actions/checkout@v1
     - name: switching from HTTPS to SSH
       run: git remote set-url origin ${{ secrets.ssh }}
