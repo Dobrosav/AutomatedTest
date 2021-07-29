@@ -83,12 +83,11 @@ public class Main {
 			}
 			fw = new FileWriter("pr-data_Output.csv", true);
 			int i = 0;
+			System.out.println("new file created");
 			while (i < count) {
-				// System.out.println(status[i]);
 				fw.write(status[i] + "\n");
 				i++;
 			}
-			fw.flush();
 			fw.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
