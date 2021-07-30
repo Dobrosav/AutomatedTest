@@ -68,7 +68,7 @@ public class Main {
 			FileWriter fw;
 			String[] status = new String[count];
 			status[0] = columnValues.get(0);
-			for (int i = 1; i < 10; i++) {
+			for (int i = 1; i < count; i++) {
 				String[] tmp = columnValues.get(i).split(",", -1);
 				if (columnValues.get(i).contains("Opened")) {
 					String url = tmp[6];
@@ -85,7 +85,7 @@ public class Main {
 			}
 			fw = new FileWriter("pr-data.csv");
 			int i = 0;
-			while (i < 10) {
+			while (i < count) {
 				// System.out.println(status[i]);
 				fw.write(status[i] + "\n");
 				i++;
