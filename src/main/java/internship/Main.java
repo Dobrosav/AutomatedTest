@@ -22,12 +22,14 @@ public class Main {
 	private static void readData() {
 		Scanner scanner;
 		try {
-			scanner = new Scanner(new File("pr-data.csv"));
+			File f = new File("pr-data.csv");
+			scanner = new Scanner(f);
 			while (scanner.hasNextLine()) {
 				String values = scanner.nextLine();
 				columnValues.add(values);
 				count++;
 			}
+			f = null;
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -66,7 +68,7 @@ public class Main {
 			FileWriter fw;
 			String[] status = new String[count];
 			status[0] = columnValues.get(0);
-			for (int i = 1; i < 10; i++) {
+			for (int i = 1; i < count; i++) {
 				String[] tmp = columnValues.get(i).split(",", -1);
 				if (columnValues.get(i).contains("Opened")) {
 					String url = tmp[6];
@@ -81,25 +83,27 @@ public class Main {
 				if (i % 200 == 0)
 					Thread.sleep(20000);
 			}
-			fw = new FileWriter("pr-data_Output.csv", true);
+			fw = new FileWriter("pr-data.csv");
 			int i = 0;
-			System.out.println("new file created");
 			while (i < count) {
+				// System.out.println(status[i]);
 				fw.write(status[i] + "\n");
 				i++;
 			}
+			fw.flush();
 			fw.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-		catch(InterruptedException e) {
+		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+		System.out.println("Process finished!");
 		return 0;
 	}
+
 	public static void main(String args[]) {
-		Main m=new Main();
+		Main m = new Main();
 		m.getStatuses();
 	}
 }
