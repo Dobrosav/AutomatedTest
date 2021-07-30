@@ -85,7 +85,7 @@ public class Main {
 			}
 			fw = new FileWriter("pr-data.csv");
 			int i = 0;
-			while (i < c10) {
+			while (i < 10) {
 				// System.out.println(status[i]);
 				fw.write(status[i] + "\n");
 				i++;
