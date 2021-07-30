@@ -30,7 +30,7 @@ jobs:
     - name: set author
       run: git config --global user.email "vlaskovic.dodo@gmail.com"
     - name: set author name
-      run: git config --global user.name "Dobrosav Vlaskovic
+      run: git config --global user.name "Dobrosav Vlaskovic"
     - name: git commmit changed file
       run: git commit -m "Auto-update pr-data"
     - name: git push to main
